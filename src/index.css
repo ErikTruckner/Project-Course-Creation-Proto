@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.light-blue-text {
+  color: #61dbfb;
+}
+
+.fredoka-font {
+  font-family: 'Fredoka One', cursive;
+}
