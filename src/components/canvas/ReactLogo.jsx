@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF, OrbitControls, useAnimations, Stars } from '@react-three/drei'
+import { useGLTF, useAnimations, Stars } from '@react-three/drei'
 
 const ReactLogo = () => {
   // THIS const will be our key to the gltf
@@ -65,11 +65,13 @@ const ReactLogo = () => {
 
 const ReactLogoCanvas = () => {
   return (
-    <Canvas camera={{ position: [20, 3, 5], fov: 25 }}>
-      <OrbitControls />
-
-      <ReactLogo />
-    </Canvas>
+    <>
+      <Canvas camera={{ position: [20, 3, 5], fov: 25 }}>
+        <Suspense>
+          <ReactLogo />
+        </Suspense>
+      </Canvas>
+    </>
   )
 }
 
