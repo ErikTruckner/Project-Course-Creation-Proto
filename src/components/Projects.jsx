@@ -10,7 +10,8 @@ const Projects = () => {
       imageSrc: 'https://i.ibb.co/ncrXc2V/1.png',
       projectName: 'Project 1',
       projectLink: '#',
-      projectDescription: 'This is the description for project 1.',
+      projectDescription:
+        'This is the description for project 1. sgsdrgdsrgg  drgdrg drg tjrfj ftj ftj yk gk yukl hddrg rg rdg srg e4g lorem ipsom',
       githubLink: '#',
     },
     {
@@ -44,7 +45,7 @@ const Projects = () => {
     setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1))
 
   useEffect(() => {
-    const slideInterval = setInterval(next, 3000)
+    const slideInterval = setInterval(next, 10000)
     return () => clearInterval(slideInterval)
   }, [])
 
@@ -56,24 +57,25 @@ const Projects = () => {
     githubLink,
   }) => {
     return (
-      <div className='bg-white rounded-lg overflow-hidden w-full  flex-shrink-0'>
-        <a href={projectLink}>
-          <img
-            src={imageSrc}
-            alt={projectName}
-            className='h-1/2 w-full object-cover cursor-pointer'
-          />
-        </a>
-        <div className='p-4'>
-          <h2 className='text-xl font-semibold mb-2'>{projectName}Cool</h2>
-
-          <p className='text-gray-700 text-base'>{projectDescription}</p>
-          <div className='flex justify-end mt-4'>
+      <div className='border-4 w-full   bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] rounded-lg overflow-hidden  flex flex-col flex-shrink-0 '>
+        <div className=' h-[40%]'>
+          <a href={projectLink}>
+            <img
+              src={imageSrc}
+              alt={projectName}
+              className='border-b-2 w-full h-full object-cover cursor-pointer'
+            />
+          </a>
+        </div>
+        <div className='flex flex-col justify-start items-center h-[40%] mt-10 '>
+          <h2 className=' text-white text-center mb-10  '>{projectName}</h2>
+          <p className=' text-white text-center mb-5 '>{projectDescription}</p>
+          <div className='flex justify-center '>
             <a href={githubLink}>
               <img
                 src='https://img.icons8.com/material-outlined/24/000000/github.png'
                 alt='github link'
-                className='w-6 h-6'
+                className='w-10 h-10'
               />
             </a>
           </div>
@@ -83,15 +85,14 @@ const Projects = () => {
   }
 
   return (
-    <section className='bg-slate-900 relative w-full h-screen mx-auto'>
+    <section className=' bg-slate-900 relative w-full h-screen '>
       <ProjectsCanvas />
-
-      <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white fredoka-font'>
-        <h1 className='text-5xl lg:text-7xl mt-5 '>
+      <div className=' absolute top-0 left-0  w-[98%]  flex flex-col justify-center items-center text-white '>
+        <h1 className='text-5xl lg:text-7xl mt-5  '>
           Portfolio
           <span className=' light-blue-text font-semibold '> Pro</span>jects
         </h1>
-        <div className='max-w-lg mt-10'>
+        <div className=' max-w-sm mt-10'>
           <div className='overflow-hidden relative'>
             <div
               className='flex transition-transform
