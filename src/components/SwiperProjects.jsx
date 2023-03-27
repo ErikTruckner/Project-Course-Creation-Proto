@@ -79,17 +79,39 @@ const SwiperProjects = () => {
   return (
     <section className=' bg-slate-900 relative w-full h-full '>
       <div className='w-full h-full flex flex-col justify-center items-center text-white'>
-        <h1 className='text-5xl lg:text-7xl mt-10 fredoka-font'>
+        <h1 className='text-5xl lg:text-7xl mt-10 fredoka-font text-center'>
           Portfolio
           <span className=' light-blue-text font-semibold '> Pro</span>
           jects
         </h1>
-        <div className='w-1/2 my-10'>
+        <div className='w-full my-10'>
           <Swiper
+            grabCursor={true}
+            centeredSlides={true}
             spaceBetween={50}
             slidesPerView={3}
+            effect={'coverflow'}
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            modules={[EffectCoverflow]}
             onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}>
+            onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}>
             {slides.map((slide) => (
               <SwiperSlide key={slide.index}>
                 <Card
