@@ -49,13 +49,13 @@ const SwiperProjects = () => {
     githubLink,
   }) => {
     return (
-      <div className='border-4 w-full   bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] rounded-lg overflow-hidden  flex flex-col flex-shrink-0 '>
-        <div className=' h-[40%]'>
-          <a href={projectLink}>
+      <div className='border-4 w-full bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] rounded-lg overflow-hidden  flex flex-col '>
+        <div className=' w-full '>
+          <a href={projectLink} className='border-b-2 w-full object-fill  '>
             <img
               src={imageSrc}
               alt={projectName}
-              className='border-b-2 w-full h-full object-cover cursor-pointer'
+              className='border-b-2 object-fill scale-90 cursor-pointer'
             />
           </a>
         </div>
@@ -77,25 +77,32 @@ const SwiperProjects = () => {
   }
 
   return (
-    <section className=' bg-slate-900 relative w-full h-screen '>
-      <div className='w-full h-full flex justify-center items-center'>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}>
-          {slides.map((slide) => (
-            <SwiperSlide key={slide.index}>
-              <Card
-                imageSrc={slide.imageSrc}
-                projectName={slide.projectName}
-                projectLink={slide.projectLink}
-                projectDescription={slide.projectDescription}
-                githubLink={slide.githubLink}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <section className=' bg-slate-900 relative w-full h-full '>
+      <div className='w-full h-full flex flex-col justify-center items-center text-white'>
+        <h1 className='text-5xl lg:text-7xl mt-10 fredoka-font'>
+          Portfolio
+          <span className=' light-blue-text font-semibold '> Pro</span>
+          jects
+        </h1>
+        <div className='w-1/2 my-10'>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={3}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}>
+            {slides.map((slide) => (
+              <SwiperSlide key={slide.index}>
+                <Card
+                  imageSrc={slide.imageSrc}
+                  projectName={slide.projectName}
+                  projectLink={slide.projectLink}
+                  projectDescription={slide.projectDescription}
+                  githubLink={slide.githubLink}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   )
