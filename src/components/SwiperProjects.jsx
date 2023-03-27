@@ -41,42 +41,6 @@ const slides = [
 ]
 
 const SwiperProjects = () => {
-  const slides = [
-    {
-      index: 0,
-      imageSrc: 'https://i.ibb.co/ncrXc2V/1.png',
-      projectName: 'Project 1',
-      projectLink: '#',
-      projectDescription:
-        'This is the description for project 1. sgsdrgdsrgg  drgdrg drg tjrfj ftj ftj yk gk yukl hddrg rg rdg srg e4g lorem ipsom',
-      githubLink: '#',
-    },
-    {
-      index: 1,
-      imageSrc: 'https://i.ibb.co/B3s7v4h/2.png',
-      projectName: 'Project 2',
-      projectLink: '#',
-      projectDescription: 'This is the description for project 2.',
-      githubLink: '#',
-    },
-    {
-      index: 2,
-      imageSrc: 'https://i.ibb.co/XXR8kzF/3.png',
-      projectName: 'Project 3',
-      projectLink: '#',
-      projectDescription: 'This is the description for project 3.',
-      githubLink: '#',
-    },
-    {
-      index: 3,
-      imageSrc: 'https://i.ibb.co/yg7BSdM/4.png',
-      projectName: 'Project 4',
-      projectLink: '#',
-      projectDescription: 'This is the description for project 4.',
-      githubLink: '#',
-    },
-  ]
-
   const Card = ({
     imageSrc,
     projectName,
@@ -96,9 +60,7 @@ const SwiperProjects = () => {
           </a>
         </div>
         <div className='flex flex-col justify-start items-center h-[40%] mt-10 '>
-          <h2 className=' text-white text-center mb-10  '>
-            Why no work{projectName}
-          </h2>
+          <h2 className=' text-white text-center mb-10  '>{projectName}</h2>
           <p className=' text-white text-center mb-5 '>{projectDescription}</p>
           <div className='flex justify-center '>
             <a href={githubLink}>
@@ -122,43 +84,17 @@ const SwiperProjects = () => {
           slidesPerView={3}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}>
-          <SwiperSlide>
-            <Card
-              imageSrc={slides.imageSrc}
-              projectName={slides.projectName}
-              projectLink={slides.projectLink}
-              projectDescription={slides.projectDescription}
-              githubLink={slides.githubLink}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              imageSrc={slides.imageSrc}
-              projectName={slides.projectName}
-              projectLink={slides.projectLink}
-              projectDescription={slides.projectDescription}
-              githubLink={slides.githubLink}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              imageSrc={slides.imageSrc}
-              projectName={slides.projectName}
-              projectLink={slides.projectLink}
-              projectDescription={slides.projectDescription}
-              githubLink={slides.githubLink}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              imageSrc={slides.imageSrc}
-              projectName={slides.projectName}
-              projectLink={slides.projectLink}
-              projectDescription={slides.projectDescription}
-              githubLink={slides.githubLink}
-            />
-          </SwiperSlide>
-          ...
+          {slides.map((slide) => (
+            <SwiperSlide key={slide.index}>
+              <Card
+                imageSrc={slide.imageSrc}
+                projectName={slide.projectName}
+                projectLink={slide.projectLink}
+                projectDescription={slide.projectDescription}
+                githubLink={slide.githubLink}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>
