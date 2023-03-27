@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
 import About from './components/About'
+
 import Hero from './components/Hero'
-import Projects from './components/Projects'
+
+import SwiperProjects from './components/SwiperProjects'
 
 export default function App() {
   return (
@@ -9,7 +11,8 @@ export default function App() {
       <Hero />
 
       <About />
-      <Projects />
+
+      <SwiperProjects />
     </div>
   )
 }
