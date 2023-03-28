@@ -65,7 +65,7 @@ const Contact = () => {
       <div className='absolute w-full h-full'>
         <ContactCanvas />
       </div>
-      <div className=' w-[96%] md:w-[60%] xl:w-[40%] text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] p-8 rounded-2xl glowing-shadow z-10'>
+      <div className='border-2 w-[96%] md:w-[60%] xl:w-[40%] text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] p-8 rounded-2xl glowing-shadow z-10'>
         <h1 className='text-5xl lg:text-7xl text-white  '>
           C<span className=' light-blue-text font-semibold '>on</span>t
           <span className=' light-blue-text font-semibold '>act</span>
@@ -83,7 +83,8 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className='form-field-color py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='border-2 form-field-color py-4 px-6 placeholder:text-secondary text-white
+               rounded-lg outline-none  font-medium'
             />
           </label>
           <label className='flex flex-col'>
@@ -94,7 +95,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email?"
-              className='form-field-color py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='border-2 form-field-color text-white py-4 px-6 placeholder:text-secondary rounded-lg outline-none  font-medium'
             />
           </label>
           <label className='flex flex-col'>
@@ -105,13 +106,13 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder='Please leave your message...'
-              className='form-field-color py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='border-2 form-field-color py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none  font-medium'
             />
           </label>
 
           <button
             type='submit'
-            className='hover-glowing-shadow-and-scale py-3 px-8 rounded-xl outline-none w-fit text-white font-bold'>
+            className='border-2 hover-glowing-shadow-and-scale py-3 px-8 rounded-xl outline-none w-fit text-white font-bold'>
             {loading ? 'Sending...' : 'Send'}
           </button>
         </form>

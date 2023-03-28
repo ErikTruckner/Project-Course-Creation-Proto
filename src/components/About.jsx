@@ -19,9 +19,7 @@ const About = () => {
     }
   }, [controls, inView])
   return (
-    <section
-      id='about-section'
-      className='bg-slate-900 relative w-full h-full mx-auto '>
+    <section className='bg-slate-900 relative w-screen h-screen  '>
       <AboutCanvas />
       <motion.div
         ref={ref}

@@ -8,6 +8,29 @@
   color: #61dbfb;
 }
 
+.form-field-color {
+  background: rgb(18, 59, 152);
+  background: -moz-linear-gradient(
+    13deg,
+    rgba(18, 59, 152, 0.8631827731092436) 0%,
+    rgba(0, 6, 79, 0.7315301120448179) 35%,
+    rgba(1, 41, 82, 0.8407738095238095) 100%
+  );
+  background: -webkit-linear-gradient(
+    13deg,
+    rgba(18, 59, 152, 0.8631827731092436) 0%,
+    rgba(0, 6, 79, 0.7315301120448179) 35%,
+    rgba(1, 41, 82, 0.8407738095238095) 100%
+  );
+  background: linear-gradient(
+    13deg,
+    rgba(18, 59, 152, 0.8631827731092436) 0%,
+    rgba(0, 6, 79, 0.7315301120448179) 35%,
+    rgba(1, 41, 82, 0.8407738095238095) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#123b98",endColorstr="#012952",GradientType=1);
+}
+
 .fredoka-font {
   font-family: 'Fredoka One', cursive;
 }
