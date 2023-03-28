@@ -83,7 +83,7 @@ const SwiperProjects = () => {
   }
 
   return (
-    <section className=' bg-slate-900 relative w-full h-full overflow-hidden '>
+    <section className=' bg-slate-900 relative w-full h-full overflow-hidden  '>
       <div className='absolute w-full h-full'>
         <ProjectsCanvas />
       </div>
@@ -94,12 +94,36 @@ const SwiperProjects = () => {
           jects
         </h1>
         <p className='mt-5'>Swipe or drag the items</p>
-        <div className='w-full lg:w-1/4 my-10 '>
+        <div className='w-full sm:w-3/4 lg:w-1/2 xl:w-1/3 my-10 '>
           <Swiper
             grabCursor={true}
             centeredSlides={true}
-            spaceBetween={100}
-            slidesPerView={1.5}
+            // Responsive breakpoints
+            breakpoints={{
+              // when window width is >=
+              1: {
+                slidesPerView: 1.3,
+                spaceBetween: 120,
+              },
+              400: {
+                slidesPerView: 1.3,
+                spaceBetween: 200,
+              },
+              1024: {
+                slidesPerView: 1.3,
+                spaceBetween: 175,
+              },
+              1280: {
+                slidesPerView: 1.5,
+                spaceBetween: 150,
+              },
+              1580: {
+                slidesPerView: 1.5,
+                spaceBetween: 175,
+              },
+            }}
+            // spaceBetween={150}
+            // slidesPerView={1.5}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,

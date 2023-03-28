@@ -1,4 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
+import { useAnimation, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 import emailjs from '@emailjs/browser'
 import ContactCanvas from './canvas/ContactCanvas'
@@ -60,13 +62,32 @@ const Contact = () => {
       )
   }
 
+  // FRAMER MOTION
+  const contactVariants = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+    hidden: { opacity: 0, scale: 0 },
+  }
+  const controls = useAnimation()
+  const [ref, inView] = useInView()
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
   return (
-    <section className='bg-slate-900 relative w-full h-full flex flex-col justify-center items-center py-10'>
-      <div className='absolute w-full h-full'>
+    <section className='bg-slate-900 w-full h-screen relative flex flex-col justify-center items-center pb-10 overflow-hidden'>
+      <div className='absolute left-0 top-0 w-screen h-screen'>
         <ContactCanvas />
       </div>
-      <div className='border-2 w-[96%] md:w-[60%] xl:w-[40%] text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] p-8 rounded-2xl glowing-shadow z-10'>
-        <h1 className='text-5xl lg:text-7xl text-white  '>
+
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial='hidden'
+        variants={contactVariants}
+        className='border-2 w-[98%] md:w-[60%] xl:w-[40%] text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] py-8 px-4 rounded-3xl glowing-shadow z-10 mt-20 '>
+        <h1 className=' header-text-glow fredoka-font text-5xl lg:text-7xl text-white  '>
           C<span className=' light-blue-text font-semibold '>on</span>t
           <span className=' light-blue-text font-semibold '>act</span>
         </h1>
@@ -76,7 +97,7 @@ const Contact = () => {
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+            <span className='text-white mb-4 font-bold'>Your Name</span>
             <input
               type='text'
               name='name'
@@ -88,7 +109,7 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span className='text-white font-bold mb-4'>Your email</span>
             <input
               type='email'
               name='email'
@@ -116,9 +137,7 @@ const Contact = () => {
             {loading ? 'Sending...' : 'Send'}
           </button>
         </form>
-      </div>
-
-      <div className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'></div>
+      </motion.div>
     </section>
   )
 }

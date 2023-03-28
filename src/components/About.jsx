@@ -19,15 +19,15 @@ const About = () => {
     }
   }, [controls, inView])
   return (
-    <section className='bg-slate-900 relative w-screen h-screen  '>
+    <section className='bg-slate-900 relative w-screen h-screen overflow-hidden '>
       <AboutCanvas />
       <motion.div
         ref={ref}
         animate={controls}
         initial='hidden'
         variants={aboutVariants}
-        className='absolute  left-[0%] top-[10%] ml-3 mr-3 md:left-[10%] xl:left-[25%] md:w-1/2 xl:w-1/3 fredoka-font text-white py-3  glowing-shadow border rounded-lg text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82]'>
-        <h1 className='text-5xl lg:text-7xl '>
+        className='absolute  left-[0%] top-[10%] ml-3 mr-3 md:left-[10%] xl:left-[25%] md:w-1/2 xl:w-1/3  text-white py-3  glowing-shadow border rounded-lg text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82]'>
+        <h1 className='text-5xl lg:text-7xl fredoka-font'>
           About
           <span className=' light-blue-text font-semibold '> Me</span>
         </h1>
