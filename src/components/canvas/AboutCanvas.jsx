@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { Stars, useGLTF, useAnimations } from '@react-three/drei'
-import { useRef, useEffect } from 'react'
+import { Suspense, useRef, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 
 const AboutWebGL = () => {
@@ -57,8 +57,9 @@ const AboutCanvas = () => {
   return (
     <>
       <Canvas camera={{ position: [20, 3, 5], fov: 25 }}>
-        {/* <OrbitControls /> */}
-        <AboutWebGL />
+        <Suspense fallback={null}>
+          <AboutWebGL />
+        </Suspense>
       </Canvas>
     </>
   )

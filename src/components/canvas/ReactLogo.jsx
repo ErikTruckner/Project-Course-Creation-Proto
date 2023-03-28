@@ -1,4 +1,4 @@
-import { useEffect, useRef, Suspense } from 'react'
+import { Suspense, useEffect, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useGLTF, useAnimations, Stars } from '@react-three/drei'
 
@@ -67,7 +67,7 @@ const ReactLogoCanvas = () => {
   return (
     <>
       <Canvas camera={{ position: [20, 3, 5], fov: 25 }}>
-        <Suspense>
+        <Suspense fallback={null}>
           <ReactLogo />
         </Suspense>
       </Canvas>
