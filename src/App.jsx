@@ -4,6 +4,7 @@ import About from './components/About'
 import Hero from './components/Hero'
 
 import SwiperProjects from './components/SwiperProjects'
+import WorkExperience from './components/WorkExperience'
 
 export default function App() {
   return (
@@ -13,6 +14,8 @@ export default function App() {
       <About />
 
       <SwiperProjects />
+
+      <WorkExperience />
     </div>
   )
 }

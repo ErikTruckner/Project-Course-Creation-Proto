@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import 'swiper/css/autoplay'
 import ProjectsCanvas from './canvas/ProjectsCanvas'
 
 const slides = [
@@ -62,7 +63,7 @@ const SwiperProjects = () => {
             />
           </a>
         </div>
-        <div className='flex flex-col justify-start items-center h-[40%] mx-1'>
+        <div className='flex flex-col justify-start items-center h-[40%] mx-1 my-1'>
           <h2 className='text-white text-center mb-5'>{projectName}</h2>
           <p className='text-white text-center mb-5'>{projectDescription}</p>
           <div className='flex justify-center mb-1'>
@@ -90,17 +91,19 @@ const SwiperProjects = () => {
           <span className=' light-blue-text font-semibold '> Pro</span>
           jects
         </h1>
-        <div className='w-full lg:w-1/4 my-5 '>
+        <p className='mt-5'>Swipe or drag the items</p>
+        <div className='w-full lg:w-1/4 my-10 '>
           <Swiper
             grabCursor={true}
             centeredSlides={true}
             spaceBetween={100}
             slidesPerView={1.5}
-            loop={true}
             autoplay={{
-              delay: 3000,
+              delay: 5000,
               disableOnInteraction: false,
             }}
+            speed={2000}
+            loop={true}
             effect={'coverflow'}
             coverflowEffect={{
               rotate: 50,
@@ -111,9 +114,7 @@ const SwiperProjects = () => {
             }}
             autoHeight={true}
             resizeObserver={true}
-            modules={[EffectCoverflow]}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}>
+            modules={[EffectCoverflow, Autoplay]}>
             {slides.map((slide) => (
               <SwiperSlide key={slide.index}>
                 <Card
