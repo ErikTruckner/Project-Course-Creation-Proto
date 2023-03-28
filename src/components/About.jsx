@@ -21,7 +21,7 @@ const About = () => {
   return (
     <section
       id='about-section'
-      className='bg-slate-900 relative w-full h-screen mx-auto '>
+      className='bg-slate-900 relative w-full h-full mx-auto '>
       <AboutCanvas />
       <motion.div
         ref={ref}

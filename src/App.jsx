@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import About from './components/About'
 
+import Contact from './components/Contact'
+
 import Hero from './components/Hero'
 
 import SwiperProjects from './components/SwiperProjects'
@@ -16,6 +18,8 @@ export default function App() {
       <SwiperProjects />
 
       <WorkExperience />
+
+      <Contact />
     </div>
   )
 }

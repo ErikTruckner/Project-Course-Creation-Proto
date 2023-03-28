@@ -26,8 +26,6 @@ const AboutWebGL = () => {
     starsRef.current.rotation.z += 0.0001
   })
 
-  console.log(spaceCity)
-
   return (
     <>
       <mesh>

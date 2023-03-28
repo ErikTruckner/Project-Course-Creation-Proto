@@ -43,7 +43,7 @@ const slides = [
 const WorkExperience = () => {
   const Card = ({ jobTitle, companyName, datesWorked, jobDescription }) => {
     return (
-      <div className='border-4 w-[98%] bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] rounded-lg overflow-hidden flex flex-col'>
+      <div className='border-4 w-[98%] bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] rounded-lg overflow-hidden flex flex-col  hover-glowing-shadow-and-scale'>
         <div className='flex flex-col justify-start items-center  mx-1 my-5'>
           <h2 className='text-white text-lg text-center mb-5'>{jobTitle}</h2>
           <h3 className='text-white text-lg text-center mb-5'>{companyName}</h3>
@@ -61,7 +61,7 @@ const WorkExperience = () => {
       <div className='absolute w-full h-full'>
         <ProjectsCanvas />
       </div>
-      <div className='w-full h-full flex flex-col justify-start items-center text-white z-10 my-20'>
+      <div className='w-full h-full flex flex-col justify-start items-center text-white z-10 my-5'>
         <h1 className='text-5xl lg:text-7xl mt-10 fredoka-font text-center'>
           Work
           <span className=' light-blue-text font-semibold '> Exp</span>

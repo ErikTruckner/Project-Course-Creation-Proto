@@ -64,14 +64,16 @@ const SwiperProjects = () => {
           </a>
         </div>
         <div className='flex flex-col justify-start items-center h-[40%] mx-1 my-1'>
-          <h2 className='text-white text-center mb-5'>{projectName}</h2>
+          <h2 className='text-white text-center font-bold mb-5'>
+            {projectName}
+          </h2>
           <p className='text-white text-center mb-5'>{projectDescription}</p>
           <div className='flex justify-center mb-1'>
             <a href={githubLink}>
               <img
-                src='https://img.icons8.com/material-outlined/24/000000/github.png'
+                src='https://img.icons8.com/material-outlined/24/61dbfb/github.png'
                 alt='github link'
-                className='w-10 h-10'
+                className='w-10 h-10 hover-glowing-shadow-and-scale rounded-full'
               />
             </a>
           </div>
