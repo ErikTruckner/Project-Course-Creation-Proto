@@ -11,6 +11,7 @@ import ProjectsCanvas from './canvas/ProjectsCanvas'
 
 const slides = [
   {
+    id: 0,
     jobTitle: 'Job Title',
     companyName: 'Company Name',
     datesWorked: ' 2020 - 2023 ',
@@ -18,6 +19,7 @@ const slides = [
       'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
   },
   {
+    id: 1,
     jobTitle: 'Job Title',
     companyName: 'Company Name',
     datesWorked: ' 2020 - 2023',
@@ -25,6 +27,7 @@ const slides = [
       'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
   },
   {
+    id: 2,
     jobTitle: 'Job Title',
     companyName: 'Company Name',
     datesWorked: ' 2020 - 2023',
@@ -32,6 +35,7 @@ const slides = [
       'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
   },
   {
+    id: 3,
     jobTitle: 'Job Title',
     companyName: 'Company Name',
     datesWorked: ' 2020 - 2023',
@@ -89,7 +93,7 @@ const WorkExperience = () => {
             modules={[EffectCube, Autoplay]}
             className='mySwiper'>
             {slides.map((slide) => (
-              <SwiperSlide key={slide.index}>
+              <SwiperSlide key={slide.id}>
                 <Card
                   jobTitle={slide.jobTitle}
                   companyName={slide.companyName}

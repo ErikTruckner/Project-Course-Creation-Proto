@@ -11,6 +11,7 @@ import ProjectsCanvas from './canvas/ProjectsCanvas'
 
 const slides = [
   {
+    id: 0,
     imageSrc: 'https://picsum.photos/200?random=2',
     projectName: 'Project 1',
     projectLink: '#',
@@ -19,6 +20,7 @@ const slides = [
     githubLink: '#',
   },
   {
+    id: 1,
     imageSrc: 'https://picsum.photos/200?random=3',
     projectName: 'Project 2',
     projectLink: '#',
@@ -27,6 +29,7 @@ const slides = [
     githubLink: '#',
   },
   {
+    id: 2,
     imageSrc: 'https://picsum.photos/200?random=4',
     projectName: 'Project 3',
     projectLink: '#',
@@ -35,6 +38,7 @@ const slides = [
     githubLink: '#',
   },
   {
+    id: 3,
     imageSrc: 'https://picsum.photos/200?random=5',
     projectName: 'Project 4',
     projectLink: '#',
@@ -142,7 +146,7 @@ const SwiperProjects = () => {
             resizeObserver={true}
             modules={[EffectCoverflow, Autoplay]}>
             {slides.map((slide) => (
-              <SwiperSlide key={slide.index}>
+              <SwiperSlide key={slide.id}>
                 <Card
                   imageSrc={slide.imageSrc}
                   projectName={slide.projectName}
