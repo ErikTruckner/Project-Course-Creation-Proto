@@ -57,9 +57,7 @@ const AboutCanvas = () => {
   return (
     <>
       <Canvas camera={{ position: [20, 3, 5], fov: 25 }}>
-        <Suspense fallback={null}>
-          <AboutWebGL />
-        </Suspense>
+        <AboutWebGL />
       </Canvas>
     </>
   )

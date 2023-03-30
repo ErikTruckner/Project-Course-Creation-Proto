@@ -63,9 +63,7 @@ const ContactCanvas = () => {
   return (
     <>
       <Canvas camera={{ position: [20, 3, 5], fov: 25 }}>
-        <Suspense fallback={null}>
-          <Earth />
-        </Suspense>
+        <Earth />
       </Canvas>
     </>
   )

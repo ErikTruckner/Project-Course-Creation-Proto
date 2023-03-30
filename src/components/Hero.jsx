@@ -6,11 +6,7 @@ import { Suspense } from 'react'
 
 const Hero = () => {
   return (
-    <section className='bg-slate-900 relative w-screen h-screen mx-auto overflow-hidden '>
-      <Suspense>
-        <ReactLogoCanvas />
-      </Suspense>
-
+    <section className='bg-scroll absolute  w-screen h-screen mx-auto overflow-hidden '>
       <div className='absolute left-[5%] top-[5%] xl:left-[14%] xl:top-[14%]  mx-auto fredoka-font text-white '>
         <h1 id='hero-header' className='puff-in-center text-5xl lg:text-7xl'>
           Hi, I'm

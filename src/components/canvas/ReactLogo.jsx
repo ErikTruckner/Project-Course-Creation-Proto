@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF, useAnimations, Stars } from '@react-three/drei'
+
+import { useGLTF, useAnimations, Stars, Loader } from '@react-three/drei'
 
 const ReactLogo = () => {
   // THIS const will be our key to the gltf
@@ -26,13 +26,6 @@ const ReactLogo = () => {
   // const
   //
   // ref for star rotation
-  const starsRef = useRef()
-
-  useFrame(() => {
-    starsRef.current.rotation.y += 0.0001
-    starsRef.current.rotation.x += 0.0001
-    starsRef.current.rotation.z += 0.0001
-  })
 
   return (
     // Create the mesh that our scene will go in
@@ -49,30 +42,16 @@ const ReactLogo = () => {
         //   Change model size with scale
         scale={0.65}
       />
-      <Stars
-        ref={starsRef}
-        radius={1}
-        depth={80}
-        count={5000}
-        factor={5}
-        saturation={0}
-        fade
-        speed={2}
-      />
     </mesh>
   )
 }
 
 const ReactLogoCanvas = () => {
-  return (
-    <>
-      <Canvas camera={{ position: [20, 3, 5], fov: 25 }}>
-        <Suspense fallback={null}>
-          <ReactLogo />
-        </Suspense>
-      </Canvas>
-    </>
-  )
+  const bgColor = ({ gl }) => {
+    gl.setClearColor('#000000', 1)
+  }
+
+  return <ReactLogo />
 }
 
-export default ReactLogoCanvas
+export default ReactLogo

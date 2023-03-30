@@ -19,8 +19,8 @@ const About = () => {
     }
   }, [controls, inView])
   return (
-    <section className='bg-slate-900 relative w-screen h-screen overflow-hidden '>
-      <AboutCanvas />
+    <section className=' relative w-screen h-screen overflow-hidden '>
+      {/* <AboutCanvas /> */}
       <motion.div
         ref={ref}
         animate={controls}

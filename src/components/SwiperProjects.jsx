@@ -88,9 +88,9 @@ const SwiperProjects = () => {
 
   return (
     <section className=' bg-slate-900 relative w-full h-full overflow-hidden  '>
-      <div className='absolute w-full h-full'>
+      {/* <div className='absolute w-full h-full'>
         <ProjectsCanvas />
-      </div>
+      </div> */}
       <div className='w-full h-full flex flex-col justify-center items-center text-white z-10'>
         <h1 className='text-5xl lg:text-7xl mt-10 fredoka-font text-center'>
           Portfolio

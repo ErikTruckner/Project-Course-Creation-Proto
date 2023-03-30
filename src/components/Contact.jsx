@@ -77,9 +77,9 @@ const Contact = () => {
 
   return (
     <section className='bg-slate-900 w-full h-screen relative flex flex-col justify-center items-center pb-10 overflow-hidden'>
-      <div className='absolute left-0 top-0 w-screen h-screen'>
+      {/* <div className='absolute left-0 top-0 w-screen h-screen'>
         <ContactCanvas />
-      </div>
+      </div> */}
 
       <motion.div
         ref={ref}

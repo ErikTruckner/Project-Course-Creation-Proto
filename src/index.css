@@ -22,6 +22,18 @@ html body {
   overflow-x: inherit;
 }
 
+#master-container {
+  background-attachment: scroll;
+  position: fixed;
+
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: -1;
+}
+
 .light-blue-text {
   color: #61dbfb;
 }

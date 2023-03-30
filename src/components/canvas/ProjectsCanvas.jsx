@@ -39,9 +39,7 @@ const ProjectsCanvas = () => {
   return (
     <>
       <Canvas camera={{ position: [20, 3, 5], fov: 25 }}>
-        <Suspense fallback={null}>
-          <ProjectsWebGL />
-        </Suspense>
+        <ProjectsWebGL />
       </Canvas>
     </>
   )
