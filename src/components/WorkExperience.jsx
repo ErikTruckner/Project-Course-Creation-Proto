@@ -61,7 +61,7 @@ const WorkExperience = () => {
   }
 
   return (
-    <section className=' bg-slate-900 relative w-screen h-screen overflow-hidden '>
+    <section className='relative w-screen h-screen overflow-hidden '>
       {/* <div className='absolute w-full h-full'>
         <ProjectsCanvas />
       </div> */}

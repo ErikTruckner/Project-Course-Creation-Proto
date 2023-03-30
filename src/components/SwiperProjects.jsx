@@ -7,7 +7,6 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
-import ProjectsCanvas from './canvas/ProjectsCanvas'
 
 const slides = [
   {
@@ -87,7 +86,7 @@ const SwiperProjects = () => {
   }
 
   return (
-    <section className=' bg-slate-900 relative w-full h-full overflow-hidden  '>
+    <section className=' relative w-screen h-[50%]  '>
       {/* <div className='absolute w-full h-full'>
         <ProjectsCanvas />
       </div> */}

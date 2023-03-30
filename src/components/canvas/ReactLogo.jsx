@@ -46,12 +46,4 @@ const ReactLogo = () => {
   )
 }
 
-const ReactLogoCanvas = () => {
-  const bgColor = ({ gl }) => {
-    gl.setClearColor('#000000', 1)
-  }
-
-  return <ReactLogo />
-}
-
 export default ReactLogo

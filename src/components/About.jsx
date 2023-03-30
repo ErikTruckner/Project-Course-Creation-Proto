@@ -1,10 +1,9 @@
 import '../index.css'
 import '../animations.css'
-import { Suspense } from 'react'
+
 import React, { useEffect } from 'react'
 import { useAnimation, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import AboutCanvas from './canvas/AboutCanvas'
 
 const About = () => {
   const aboutVariants = {
@@ -19,14 +18,14 @@ const About = () => {
     }
   }, [controls, inView])
   return (
-    <section className=' relative w-screen h-screen overflow-hidden '>
+    <section className='relative w-screen h-screen mt-20'>
       {/* <AboutCanvas /> */}
       <motion.div
         ref={ref}
         animate={controls}
         initial='hidden'
         variants={aboutVariants}
-        className='absolute  left-[0%] top-[10%] ml-3 mr-3 md:left-[10%] xl:left-[25%] md:w-1/2 xl:w-1/3  text-white py-3  glowing-shadow border rounded-lg text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82]'>
+        className='absolute  left-[0%]  ml-3 mr-3 md:left-[10%] xl:left-[25%] md:w-1/2 xl:w-1/3  text-white py-3  glowing-shadow border rounded-lg text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82]'>
         <h1 className='text-5xl lg:text-7xl fredoka-font'>
           About
           <span className=' light-blue-text font-semibold '> Me</span>
@@ -44,6 +43,13 @@ const About = () => {
           nesciunt! Vero dolorum deserunt eos!
         </p>
       </motion.div>
+      <div className=' absolute flex flex-col  bottom-[25%] left-[50%] translate-x-[-50%]  '>
+        <div className='slide-bottom'>
+          <div className='down-arrow'></div>
+          <div className='down-arrow'></div>
+          <div className='down-arrow'></div>
+        </div>
+      </div>
     </section>
   )
 }
