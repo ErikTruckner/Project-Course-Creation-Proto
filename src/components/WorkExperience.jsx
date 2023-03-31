@@ -7,7 +7,6 @@ import 'swiper/css/effect-cube'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
-import ProjectsCanvas from './canvas/ProjectsCanvas'
 
 const slides = [
   {

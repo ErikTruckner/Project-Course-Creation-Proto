@@ -1,9 +1,8 @@
-import '../index.css'
-import '../animations.css'
-
 import React, { useEffect } from 'react'
 import { useAnimation, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+
+import '../index.css'
 
 const About = () => {
   const aboutVariants = {

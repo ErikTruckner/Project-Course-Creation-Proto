@@ -1,25 +1,26 @@
-import { Suspense, useEffect, useRef } from 'react'
+import { Suspense, useEffect, useMemo } from 'react'
+import { useGLTF, useAnimations } from '@react-three/drei'
 
-import { useGLTF, useAnimations, Stars, Loader } from '@react-three/drei'
+const actionNames = [
+  'SphereAction',
+  'TorusAction1',
+  'TorusAction2',
+  'TorusAction3',
+]
 
 const ReactLogo = () => {
-  // THIS const will be our key to the gltf
-  const reactLogo = useGLTF('./reactLogo/scene.gltf')
-  //   Animation
+  // Memoize the reactLogo object to avoid unnecessary recalculations and re-renders
+  const reactLogo = useMemo(() => useGLTF('./reactLogo/scene.gltf'), [])
+
+  // Animation
   const animations = useAnimations(reactLogo.animations, reactLogo.scene)
-  const actionNames = [
-    'SphereAction',
-    'TorusAction1',
-    'TorusAction2',
-    'TorusAction3',
-  ]
 
   useEffect(() => {
-    actionNames.forEach((actionNames) => {
-      const action = animations.actions[actionNames]
+    actionNames.forEach((actionName) => {
+      const action = animations.actions[actionName]
       action.play()
     })
-  }, [])
+  }, [animations])
 
   return (
     // Create the mesh that our scene will go in
@@ -27,13 +28,21 @@ const ReactLogo = () => {
       {/* this is our gltf model */}
       <primitive
         object={reactLogo.scene}
-        //   This gives a good angle for model on load
+        // This gives a good angle for model on load
         rotation={[0, -5, 0]}
-        //   Change model size with scale
+        // Change model size with scale
         scale={0.65}
       />
     </mesh>
   )
 }
 
-export default ReactLogo
+const App = () => {
+  return (
+    <Suspense fallback={null}>
+      <ReactLogo />
+    </Suspense>
+  )
+}
+
+export default App
