@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import React, { useRef, Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
 //
 import StarsAnimated from './StarsAnimated'
 //
@@ -10,7 +10,7 @@ import ReactLogo from './canvas/ReactLogo'
 import WorkExperience from './WorkExperience'
 import Contact from './Contact'
 import EarthModel from './canvas/EarthModel'
-import { ScrollControls } from '@react-three/drei'
+import { Loader, ScrollControls } from '@react-three/drei'
 
 const MasterContainer = () => {
   // Canvas BG color
@@ -33,12 +33,15 @@ const MasterContainer = () => {
 
         <pointLight intensity={2} color={0x61dbfb} position={[0, 5, 5]} />
         <spotLight position={(-20, 50, 10)} intensity={1} color={0x61dbfb} />
-        {/* React Model */}
-        <ReactLogo />
+        <Suspense fallback={null}>
+          {/* React Model */}
+          <ReactLogo />
 
-        {/* Earth Model */}
-        <EarthModel />
+          {/* Earth Model */}
+          <EarthModel />
+        </Suspense>
       </Canvas>
+      <Loader />
       <Hero />
       <About />
       <SwiperProjects />
