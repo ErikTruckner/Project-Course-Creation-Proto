@@ -47,7 +47,7 @@ const slides = [
 const WorkExperience = () => {
   const Card = ({ jobTitle, companyName, datesWorked, jobDescription }) => {
     return (
-      <div className='border-2 w-[98%] bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] rounded-lg  flex flex-col  glowing-shadow'>
+      <div className='border-2 w-[98%] glass-background rounded-lg  flex flex-col  glowing-shadow'>
         <div className='flex flex-col justify-start items-center  mx-1 my-5'>
           <h2 className='text-white text-lg text-center mb-5'>{jobTitle}</h2>
           <h3 className='text-white text-lg text-center mb-5'>{companyName}</h3>

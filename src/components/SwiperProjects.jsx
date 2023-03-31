@@ -56,7 +56,7 @@ const SwiperProjects = () => {
     githubLink,
   }) => {
     return (
-      <div className='border-4 w-full bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] rounded-lg overflow-hidden flex flex-col'>
+      <div className='border-4 w-full glass-background rounded-lg overflow-hidden flex flex-col'>
         <div className='w-full '>
           <a href={projectLink} className='block w-full h-full'>
             <img

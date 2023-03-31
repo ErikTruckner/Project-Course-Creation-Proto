@@ -25,7 +25,7 @@ const About = () => {
         animate={controls}
         initial='hidden'
         variants={aboutVariants}
-        className='absolute  left-[0%]  ml-3 mr-3 md:left-[10%] xl:left-[25%] md:w-1/2 xl:w-1/3  text-white py-3  glowing-shadow border rounded-lg text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82]'>
+        className='absolute  left-[0%]  ml-3 mr-3 md:left-[10%] xl:left-[25%] md:w-1/2 xl:w-1/3  text-white py-3  glowing-shadow border rounded-lg text-center glass-background'>
         <h1 className='text-5xl lg:text-7xl fredoka-font'>
           About
           <span className=' light-blue-text font-semibold '> Me</span>

@@ -3,7 +3,6 @@ import { useAnimation, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 import emailjs from '@emailjs/browser'
-import ContactCanvas from './canvas/ContactCanvas'
 
 const Contact = () => {
   const formRef = useRef()
@@ -82,7 +81,7 @@ const Contact = () => {
         animate={controls}
         initial='hidden'
         variants={contactVariants}
-        className='border-2 w-[98%] md:w-[60%] xl:w-[40%] text-center bg-gradient-to-r from-[#069ef67e] to-[#111c6f82] py-8 px-4 rounded-3xl glowing-shadow z-10 mt-20 mb-10'>
+        className='border-2 w-[98%] md:w-[60%] xl:w-[40%] text-center glass-background py-8 px-4 rounded-3xl glowing-shadow z-10 mt-20 mb-10'>
         <h1 className=' header-text-glow fredoka-font text-5xl lg:text-7xl text-white  '>
           C<span className=' light-blue-text font-semibold '>on</span>t
           <span className=' light-blue-text font-semibold '>act</span>
