@@ -1,19 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 const EarthModel = () => {
   const [scale, setScale] = useState(0.7)
 
-  const earth = useGLTF('./earth/scene.gltf')
+  const earth = useMemo(() => useGLTF('./earth/scene.gltf'), [])
   const animations = useAnimations(earth.animations, earth.scene)
-  const actionNames = ['Base Stack']
+  const actionNames = useMemo(() => ['Base Stack'], [])
 
   useEffect(() => {
-    actionNames.forEach((actionName) => {
-      const action = animations.actions[actionName]
-      action.play()
-    })
-
     const onScroll = () => {
       const percentage =
         window.scrollY / (document.body.scrollHeight - window.innerHeight)
@@ -27,6 +22,13 @@ const EarthModel = () => {
       window.removeEventListener('scroll', onScroll)
     }
   }, [])
+
+  useEffect(() => {
+    actionNames.forEach((actionName) => {
+      const action = animations.actions[actionName]
+      action.play()
+    })
+  }, [animations, actionNames])
 
   return (
     <mesh>
