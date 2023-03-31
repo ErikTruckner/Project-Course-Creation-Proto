@@ -10,6 +10,7 @@ import ReactLogo from './canvas/ReactLogo'
 import WorkExperience from './WorkExperience'
 import Contact from './Contact'
 import EarthModel from './canvas/EarthModel'
+import { ScrollControls } from '@react-three/drei'
 
 const MasterContainer = () => {
   // Canvas BG color
@@ -34,6 +35,7 @@ const MasterContainer = () => {
         <spotLight position={(-20, 50, 10)} intensity={1} color={0x61dbfb} />
         {/* React Model */}
         <ReactLogo />
+
         {/* Earth Model */}
         <EarthModel />
       </Canvas>
