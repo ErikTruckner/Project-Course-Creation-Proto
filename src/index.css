@@ -51,6 +51,29 @@ html body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#069ef6",endColorstr="#111c6f",GradientType=1);
 }
 
+.transparent-glass-background {
+  background: rgb(6, 158, 246);
+  background: -moz-linear-gradient(
+    60deg,
+    rgba(6, 158, 246, 0.7) 0%,
+    rgba(1, 13, 150, 0.7) 50%,
+    rgba(6, 14, 72, 0.7) 100%
+  );
+  background: -webkit-linear-gradient(
+    60deg,
+    rgba(6, 158, 246, 0.7) 0%,
+    rgba(1, 13, 150, 0.7) 50%,
+    rgba(6, 14, 72, 0.7) 100%
+  );
+  background: linear-gradient(
+    60deg,
+    rgba(6, 158, 246, 0.7) 0%,
+    rgba(1, 13, 150, 0.7) 50%,
+    rgba(6, 14, 72, 0.7) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#069ef6",endColorstr="#111c6f",GradientType=1);
+}
+
 .hover-text-glow {
 }
 

@@ -17,7 +17,7 @@ const EarthModel = () => {
     const onScroll = () => {
       const percentage =
         window.scrollY / (document.body.scrollHeight - window.innerHeight)
-      const newScale = 0.7 + 3.2 * percentage // adjust the scaling factor as desired
+      const newScale = 0.7 + 3 * percentage // adjust the scaling factor as desired
       setScale(newScale)
     }
 
