@@ -1,18 +1,13 @@
-import { Suspense, useEffect, useRef } from 'react'
+import { useEffect, useRef, Suspense } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { useGLTF, useAnimations, Stars } from '@react-three/drei'
 
-import { useGLTF, useAnimations, Stars, Loader } from '@react-three/drei'
-
-const ReactLogo = () => {
+const EarthModel = () => {
   // THIS const will be our key to the gltf
-  const reactLogo = useGLTF('./reactLogo/scene.gltf')
+  const earth = useGLTF('./earth/scene.gltf')
   //   Animation
-  const animations = useAnimations(reactLogo.animations, reactLogo.scene)
-  const actionNames = [
-    'SphereAction',
-    'TorusAction1',
-    'TorusAction2',
-    'TorusAction3',
-  ]
+  const animations = useAnimations(earth.animations, earth.scene)
+  const actionNames = ['Base Stack']
 
   useEffect(() => {
     actionNames.forEach((actionNames) => {
@@ -26,14 +21,15 @@ const ReactLogo = () => {
     <mesh>
       {/* this is our gltf model */}
       <primitive
-        object={reactLogo.scene}
+        object={earth.scene}
         //   This gives a good angle for model on load
         rotation={[0, -5, 0]}
+        position={[0, 0, 0]}
         //   Change model size with scale
-        scale={0.65}
+        scale={0.7}
       />
     </mesh>
   )
 }
 
-export default ReactLogo
+export default EarthModel

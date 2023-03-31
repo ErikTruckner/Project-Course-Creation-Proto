@@ -9,6 +9,7 @@ import Hero from './Hero'
 import ReactLogo from './canvas/ReactLogo'
 import WorkExperience from './WorkExperience'
 import Contact from './Contact'
+import EarthModel from './canvas/EarthModel'
 
 const MasterContainer = () => {
   // Canvas BG color
@@ -27,7 +28,14 @@ const MasterContainer = () => {
         camera={{ position: [20, 3, 5], fov: 25 }}
         onCreated={bgColor}>
         <StarsAnimated />
+        {/* We need a light to see our gltf model */}
+
+        <pointLight intensity={2} color={0x61dbfb} position={[0, 5, 5]} />
+        <spotLight position={(-20, 50, 10)} intensity={1} color={0x61dbfb} />
+        {/* React Model */}
         <ReactLogo />
+        {/* Earth Model */}
+        <EarthModel />
       </Canvas>
       <Hero />
       <About />
