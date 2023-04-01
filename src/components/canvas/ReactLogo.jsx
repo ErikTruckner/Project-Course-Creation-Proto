@@ -1,8 +1,8 @@
-import { Suspense, useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 const actionNames = [
-  'SphereAction',
+  // 'SphereAction',    in the end the earth goes here so stop the animation computation after adding it
   'TorusAction1',
   'TorusAction2',
   'TorusAction3',
@@ -38,11 +38,7 @@ const ReactLogo = () => {
 }
 
 const App = () => {
-  return (
-    <Suspense fallback={null}>
-      <ReactLogo />
-    </Suspense>
-  )
+  return <ReactLogo />
 }
 
 export default App

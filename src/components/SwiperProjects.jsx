@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper'
+import { EffectCoverflow, Autoplay } from 'swiper'
 
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
@@ -67,7 +67,7 @@ const SwiperProjects = () => {
           </a>
         </div>
         <div className='flex flex-col justify-start items-center h-[40%] mx-1 my-1'>
-          <h2 className='text-white text-center font-bold mb-5'>
+          <h2 className='text-white text-center font-bold my-3'>
             {projectName}
           </h2>
           <p className='text-white text-center mb-5'>{projectDescription}</p>

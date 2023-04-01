@@ -42,7 +42,7 @@ const About = () => {
           nesciunt! Vero dolorum deserunt eos!
         </p>
       </motion.div>
-      <div className=' absolute flex flex-col  bottom-[25%] left-[50%] translate-x-[-50%]  '>
+      <div className=' absolute flex flex-col  bottom-[20%] left-[50%] translate-x-[-50%]'>
         <div className='slide-bottom'>
           <div className='down-arrow'></div>
           <div className='down-arrow'></div>

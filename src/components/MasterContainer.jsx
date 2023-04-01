@@ -10,15 +10,13 @@ import ReactLogo from './canvas/ReactLogo'
 import WorkExperience from './WorkExperience'
 import Contact from './Contact'
 import EarthModel from './canvas/EarthModel'
-import { Loader, ScrollControls } from '@react-three/drei'
+import { Loader } from '@react-three/drei'
 
 const MasterContainer = () => {
   // Canvas BG color
   const bgColor = ({ gl }) => {
     gl.setClearColor('#000000', 1)
   }
-  //   Stars (drei) movement animations
-  const starsRef = useRef()
 
   //
   return (

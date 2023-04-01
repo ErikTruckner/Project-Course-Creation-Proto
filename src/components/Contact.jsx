@@ -75,13 +75,13 @@ const Contact = () => {
   }, [controls, inView])
 
   return (
-    <section className='w-full h-screen relative flex flex-col justify-center items-center pb-10 overflow-hidden'>
+    <section className='w-full h-full relative flex flex-col justify-center items-center overflow-hidden'>
       <motion.div
         ref={ref}
         animate={controls}
         initial='hidden'
         variants={contactVariants}
-        className='border-2 w-[98%] md:w-[60%] xl:w-[40%] text-center transparent-glass-background py-8 px-4 rounded-3xl glowing-shadow z-10 mt-20 mb-10'>
+        className='border-2 w-[98%] md:w-[60%] xl:w-[40%] text-center transparent-glass-background py-8 px-4 rounded-3xl glowing-shadow  mt-20 mb-10'>
         <h1 className=' header-text-glow fredoka-font text-5xl lg:text-7xl text-white  '>
           C<span className=' light-blue-text font-semibold '>on</span>t
           <span className=' light-blue-text font-semibold '>act</span>
