@@ -8,10 +8,13 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
 
+// you're naming it as variable on the import
+import thumbNail from '../assets/ogPortThumb.jpg'
+
 const slides = [
   {
     id: 0,
-    imageSrc: 'https://picsum.photos/200?random=2',
+    imageSrc: thumbNail,
     projectName: 'Project 1',
     projectLink: '#',
     projectDescription:
@@ -87,9 +90,6 @@ const SwiperProjects = () => {
 
   return (
     <section className=' relative w-screen h-[50%]  '>
-      {/* <div className='absolute w-full h-full'>
-        <ProjectsCanvas />
-      </div> */}
       <div className='w-full h-full flex flex-col justify-center items-center text-white z-10'>
         <h1 className='text-5xl lg:text-7xl mt-10 fredoka-font text-center'>
           Portfolio

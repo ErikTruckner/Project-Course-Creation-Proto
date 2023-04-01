@@ -61,9 +61,6 @@ const WorkExperience = () => {
 
   return (
     <section className='relative w-screen h-screen overflow-hidden '>
-      {/* <div className='absolute w-full h-full'>
-        <ProjectsCanvas />
-      </div> */}
       <div className='w-full h-full flex flex-col justify-center items-center text-white z-10 my-5'>
         <h1 className='text-5xl lg:text-7xl mt-10 fredoka-font text-center mx-1'>
           Work
